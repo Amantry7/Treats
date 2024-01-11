@@ -1,0 +1,141 @@
+{%extends 'include/homepage.html'%}
+{% load static %}
+{% block content %}
+
+<body class="theme-color-1">
+    <!-- Preloader start -->
+    <div id="preLoader">
+        <div class="loader">
+            <img src="{% static 'assets/images/loader-5.gif' %}" alt="Preloader">
+        </div>
+    </div>
+    <!-- Preloader end -->
+
+    <!-- Header-area start -->
+    {%include 'include/header.html'%}
+    <!-- Header-area end -->
+
+    <!-- Breadcrumb start -->
+    <div class="breadcrumb-area bg-img bg-cover" data-bg-image="{% static 'assets/images/breadcrumb-bg.jpg' %}">
+        <div class="overlay 65"></div>
+        <div class="container">
+            <div class="content text-center">
+                <h2 class="color-white">FAQ</h2>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="i{%url 'index'%}">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">FAQ</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb end -->
+
+    <!-- Faq-area start -->
+    <div class="faq-area pt-100 pb-60">
+        <div class="container">
+            <div class="row">
+                {% for faq in faq %}
+                <div class="col-12">
+                    <div class="row gx-xl-5">
+                        <div class="col-lg-7" data-aos="fade-up">
+                            <div class="accordion pb-10" id="faqAccordion">
+                                <div class="accordion-item border radius-md mb-30">
+                                    <h6 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            {{faq.title}}
+                                        </button>
+                                    </h6>
+                                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            <p>
+                                                {{faq.disc}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="col-lg-5" data-aos="fade-up">
+                            <div class="faq-form border radius-md p-30 mb-40">
+                                <div class="content mb-20">
+                                    <h3 class="title mb-0">У вас есть вопросы ?</h3>
+                                </div>
+                                <form id="contactForm" method="POST" >
+                                    {% csrf_token %}
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group mb-20">
+                                                <input type="text" name="name" class="form-control" id="name" required placeholder="Your name*">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group mb-20">
+                                                <input type="email" name="email" class="form-control" id="email" required placeholder="Your email*">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <div class="form-group mb-20">
+                                                <input type="text" name="subject" class="form-control" id="subject" required placeholder="Your subject">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <div class="form-group mb-20">
+                                                <textarea name="message" id="message" class="form-control" cols="30" rows="8" placeholder="Your Message..."></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12 text-center">
+                                            <button type="submit" class="btn btn-lg btn-primary rounded-pill" title="Send message">Send Your Message</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Faq-area end -->
+
+    <!-- Gallery-area start -->
+    <div class="gallery-area" data-aos="fade-up">
+        <div class="container">
+            <div class="swiper gallery-slider">
+                <div class="swiper-wrapper">
+                    {% for gallery_item in gallery %}
+                    <div class="swiper-slide">
+                        <a href="{{ gallery_item.instagram }}" class="slider-item" title="Image" target="_blank">
+                            <div class="lazy-container ratio ratio-1-2">
+                                <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}" data-src="{{ gallery_item.image.url }}" alt="Image">
+                            </div>
+                            <div class="icon rounded-pill">
+                                <img class="lazyload blur-up" src="{% static 'assets/images/placeholder.png' %}" data-src="{% static 'assets/images/instagram.png' %}" alt="Image">
+                            </div>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Gallery-area end -->
+
+    <!-- Footer-area start -->
+    {% include 'include/footer.html'%}
+    <!-- Footer-area end-->
+
+    <!-- Go to Top -->
+    <div class="go-top"><i class="fal fa-angle-up"></i></div>
+    <!-- Go to Top -->
+
+    <!-- Jquery JS -->
+   {%endblock%}
+
+</html>

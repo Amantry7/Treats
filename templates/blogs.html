@@ -1,0 +1,124 @@
+{% extends 'include/homepage.html'%}
+{% load static%}
+{% block content %}
+<body class="theme-color-1">
+    <!-- Preloader start -->
+    <div id="preLoader">
+        <div class="loader">
+            <img src="{% static 'assets/images/loader-5.gif' %}" alt="Preloader">
+        </div>
+    </div>
+    <!-- Preloader end -->
+
+    <!-- Header-area start -->
+    {% include 'include/header.html'%}
+    <!-- Header-area end -->
+
+    <!-- Breadcrumb start -->
+    <div class="breadcrumb-area bg-img bg-cover" data-bg-image="{% static 'assets/images/breadcrumb-bg.jpg' %}">
+        <div class="overlay 65"></div>
+        <div class="container">
+            <div class="content text-center">
+                <h2 class="color-white">Blogs</h2>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Blogs</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb end -->
+    
+    <!-- Blog-area start -->
+    <div class="blog-area blog-1 pt-100 pb-75">
+        <div class="container">
+            <div class="row">
+                {% for post in post %}
+                <div class="col-xl-4 col-md-6" data-aos="fade-up">
+                    <article class="card mb-25 radius-md">
+                        <div class="card-img">
+                            <a href="blog-details.html" target="_self" title="Link" class="lazy-container ratio ratio-5-3">
+                                <img class="lazyload" src="{% static 'assets/images/placeholder.png" data-src="{{post.image.url}}" alt="Blog Image">
+                            </a>
+                        </div>
+                        <div class="card-content radius-md p-25 border">
+                            <ul class="card-list list-unstyled mb-15">
+                                <li class="font-sm icon-start">
+                                    <a href="blogs.html" target="_self" title="Link"><i class="fal fa-user"></i>By {{post.made_public}}</a>
+                                </li>
+                                <li class="font-sm icon-start">
+                                    <a href="blogs.html" target="_self" title="Link"><i class="fal fa-calendar-check"></i>{{post.create_at}}</a>
+                                </li>
+                                <li class="font-sm icon-start">
+                                    <a href="blogs.html" target="_self" title="Link"><i class="fal fa-tag"></i>{{post.category}}</a>
+                                </li>
+                            </ul>
+                            <h4 class="card-title lc-2 mb-15">
+                                <a href="blog-details.html" target="_self" title="Link">
+                                    {{post.title}}
+                                </a>
+                            </h4>
+                            <a href="blogs.html" class="btn-text color-primary" target="_self" title="Read More">Read More</a>
+                        </div>
+                    </article>
+                </div>
+                {%endfor%}
+            </div>
+            <nav class="pagination-nav mt-15 mb-25" data-aos="fade-up">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item">
+                        <a class="page-link" href="blogs.html" aria-label="Previous">
+                            <i class="far fa-angle-left"></i>
+                        </a>
+                    </li>
+                    <li class="page-item active"><a class="page-link" href="blogs.html">1</a></li>
+                    <li class="page-item"><a class="page-link" href="blogs.html">2</a></li>
+                    <li class="page-item"><a class="page-link" href="blogs.html">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="blogs.html" aria-label="Next">
+                            <i class="far fa-angle-right"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <!-- Blog-area end -->
+
+    <!-- Gallery-area start -->
+    <div class="gallery-area" data-aos="fade-up">
+        <div class="container">
+            <div class="swiper gallery-slider">
+                <div class="swiper-wrapper">
+                    {% for gallery_item in gallery %}
+                    <div class="swiper-slide">
+                        <a href="{{ gallery_item.instagram }}" class="slider-item" title="Image" target="_blank">
+                            <div class="lazy-container ratio ratio-1-2">
+                                <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}" data-src="{{ gallery_item.image.url }}" alt="Image">
+                            </div>
+                            <div class="icon rounded-pill">
+                                <img class="lazyload blur-up" src="{% static 'assets/images/placeholder.png' %}" data-src="{% static 'assets/images/instagram.png' %}" alt="Image">
+                            </div>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Gallery-area end -->
+
+    <!-- Footer-area start -->
+    {% include 'include/footer.html'%}
+    <!-- Footer-area end-->
+
+    <!-- Go to Top -->
+    <div class="go-top"><i class="fal fa-angle-up"></i></div>
+    <!-- Go to Top -->
+
+    <!-- Jquery JS -->
+{% endblock %}
+
+</html>

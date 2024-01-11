@@ -1,0 +1,481 @@
+{% extends "include/homepage.html" %}
+{% load static %}
+{% block content %}
+    <!-- Preloader start -->
+     <div id="preLoader">
+        <div class="loader">
+            <img src="{% static 'assets/images/loader-5.gif' %}" alt="Preloader">
+        </div>
+    </div> 
+    <!-- Preloader end -->
+
+    <!-- Header-area start -->
+    {% include "include/header.html" %}
+    <!-- Header-area end -->
+
+    <!-- Home-area start-->
+    <section class="hero-banner hero-banner-5 parallax">
+        <div class="container-fluid">
+            <div class="row align-items-center gx-xl-5">
+                <div class="col-lg-7 col-xl-6">
+                    <div class="fluid-left">
+                        <div class="banner-content mb-40">
+                            <h1 class="title color-dark mb-30" data-aos="fade-up" data-aos-delay="100">
+                                {{rec_product.disc}}
+                            </h1>
+                            <div class="product-price" data-aos="fade-up" data-aos-delay="150">
+                                <span class="font-lg w-100 font-medium color-dark">Pricing Start From:</span>
+                                <span class="h3 new-price">${{rec_product.price}}</span>
+                                {% comment %} <span class="h4 prev-price color-white">$20.00</span> {% endcomment %}
+                            </div>
+                            <div class="cta-btn mt-40" data-aos="fade-up" data-aos-delay="250">
+                                <a href="shop.html" class="btn btn-lg btn-secondary" title="Show All Products" target="_self">Show All Products</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xl-6" data-aos="fade-up">
+                    <div class="banner-image mb-40 parallax-img text-center" data-speed="0.1" data-revert="true">
+                        <img class="lazyload blur-up" src="{% static 'assets/images/placeholder.png' %}" data-src="{{rec_product.image.url}}" alt="Banner Image">
+                    </div>
+                </div>
+            </div>
+            <span class="big-text d-none d-lg-block">ORANGE JUICE</span>
+        </div>
+        <div class="bg-img" data-bg-image="{{settings.image.url}}"></div>
+        <!-- Bg shape -->
+        <div class="bg-shape h-auto">
+            <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}" data-src="{% static 'assets/images/banner/hero-bottom-shape-2.png' %}" alt="Bg Shape">
+        </div>
+    </section>
+    <!-- Home-area end -->
+
+    <!-- About-area start -->
+    <section class="about-area about-3 pt-100 pb-60 parallax">
+        <!-- Spacer -->
+        <div class="container">
+            <div class="row align-items-center gx-xl-5">
+                <div class="col-lg-6" data-aos="fade-up">
+                    <div class="image mb-40 parallax-img img-left" data-speed="0.1" data-revert="true">
+                        <img class="lazyload blur-up" src="{{settings.image2.url}}" data-src="{{settings.image2.url}}" alt="Image">
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-up">
+                    <div class="content-title mb-10 ps-xl-2">
+                        <h2 class="title mb-30">
+                            Один из лучших магазинов соков и мороженого
+                        </h2>
+                        <div class="content-text">
+                            <p>
+                                {{settings.disc|safe}}
+                            </p>
+
+                        </div>
+                        <div class="info-list mt-30">
+                            <div class="row">
+                                <div class="col-sm-4 item mb-30">
+                                    <div class="card">
+                                        <div class="card-content">
+                                            <span class="h3 font-medium mb-2"><span class="counter">1772</span>+</span>
+                                            <p class="card-text font-lg lh-1">Всего клиентов
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 item mb-30">
+                                    <div class="card">
+                                        <div class="card-content">
+                                            <span class="h3 font-medium mb-2"><span class="counter">10</span>+</span>
+                                            <p class="card-text font-lg lh-1">Мировой аутлет
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 item mb-30">
+                                    <div class="card">
+                                        <div class="card-content">
+                                            <span class="h3 font-medium mb-2"><span class="counter">100</span>%</span>
+                                            <p class="card-text font-lg lh-1">Удовлетвореных
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About-area end -->
+
+    <!-- Category-area start -->
+    <section class="category-area category-3 bg-primary pt-120 pb-95 bg-img" data-bg-image="{% static 'assets/images/category-bg-2.png' %}">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title title-center mb-50" data-aos="fade-up">
+                        <h2 class="title mb-0 color-white">Наши самые популярные категори</h2>
+                    </div>
+                </div>
+                {% for category in categories %}
+                <div class="col-xl-2 col-lg-3 col-sm-6" data-aos="fade-up">
+                    <div class="card text-center bg-dark p-20 mb-25">
+                        <a href="shop.html" target="_self" title="Link" class="card-icon mb-20">
+                            <img class="lazyload blur-up" src="{% static 'assets/images/placeholder.png' %}" data-src="{{ category.image.url }}" alt="Image">
+                        </a>
+                        <h6 class="card-title color-white lc-1 mb-0">
+                            <a href="shop.html" target="_self" title="Fruits Juice">{{ category.title }}</a>
+                        </h6>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        
+                
+
+            </div>
+        </div>
+        <!-- Bg shape -->
+        <div class="bg-shape">
+            {% comment %} <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}" data-src="{% static 'assets/images/shape-top-2.png' %}" alt="Bg Shape"> {% endcomment %}
+        </div>
+        <div class="bg-shape h-auto">
+            {% comment %} <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}" data-src="{% static 'assets/images/shape-bottom-2.png' %}" alt="Bg Shape"> {% endcomment %}
+        </div>
+    </section>
+    <!-- Category-area end -->
+
+    <!-- Product-area start -->
+    <section class="product-area product-5 pt-100 pb-75">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title title-center mb-20" data-aos="fade-up">
+                        <h2 class="title mb-30">Ознакомьтесь с нашими востребованными продуктами</h2>
+                        <div class="tabs-navigation mb-30">
+                            <ul class="nav nav-tabs" data-hover="fancyHover">
+                                <li class="nav-item active">
+                                    <button class="nav-link hover-effect btn-md radius-sm active" data-bs-toggle="tab" data-bs-target="#tab1" type="button">Все</button>
+                                </li>
+                                <li class="nav-item">
+                                    <button class="nav-link hover-effect btn-md radius-sm" data-bs-toggle="tab" data-bs-target="#tab2" type="button">Милк Шейк</button>
+                                </li>
+                                <li class="nav-item">
+                                    <button class="nav-link hover-effect btn-md radius-sm" data-bs-toggle="tab" data-bs-target="#tab3" type="button">Соки</button>
+                                </li>
+                                <li class="nav-item">
+                                    <button class="nav-link hover-effect btn-md radius-sm" data-bs-toggle="tab" data-bs-target="#tab4" type="button">Мороженое</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="tab-content">
+                        
+                        <div class="tab-pane slide show active" id="tab1">
+                            <div class="row">
+                                {% for product in all_products %}
+                                <div class="col-md-6 col-lg-4 col-xl-3 item">
+                                    <div class="product radius-md text-center p-30 mb-25">
+                                        <figure class="product-img mb-20 mx-auto">
+                                            <a href="shop-details.html" target="_self" title="Link" class="lazy-container ratio ratio-1-1 bg-none">
+                                                <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}" data-src="{{ product.image.url }}" alt="Image">
+                                            </a>
+                                            <div class="hover-show">
+                                                <a href="cart.html" class="btn btn-md btn-primary" title="Add to Cart" target="_self">Дабавить корзину</a>
+                                            </div>
+                                        </figure>
+                                        <div class="product-details">
+                                            <h4 class="product-title lc-1 mb-10"><a href="shop-details.html" target="_self" title="{{ product.title }}">{{ product.title }}</a></h4>
+                                            <div class="product-price">
+                                                <span class="h6 font-lg new-price color-primary">${{ product.price }}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="tab-pane slide" id="tab2">
+                            <div class="row">
+                                {% for milk_shake in milk_shakes %}
+                                    <div class="col-md-6 col-lg-4 col-xl-3 item">
+                                        <div class="product radius-md text-center p-30 mb-25">
+                                            <figure class="product-img mb-20 mx-auto">
+                                                <a href="shop-details.html" target="_self" title="Link" class="lazy-container ratio ratio-1-1 bg-none">
+                                                    <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}" data-src="{{ milk_shake.image.url }}" alt="Image">
+                                                </a>
+                                                <div class="hover-show">
+                                                    <a href="cart.html" class="btn btn-md btn-primary" title="Add to Cart" target="_self">Добавить в корзину</a>
+                                                </div>
+                                            </figure>
+                                            <div class="product-details">
+                                                <h4 class="product-title lc-1 mb-10"><a href="shop-details.html" target="_self" title="{{ milk_shake.title }}">{{ milk_shake.title }}</a></h4>
+                                                <div class="product-price">
+                                                    <span class="h6 font-lg new-price color-primary">${{ milk_shake.price }}</span>
+                                                    {% comment %} <span class="prev-price font-sm">$6.00</span> {% endcomment %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% if forloop.counter|divisibleby:4 and not forloop.last %}
+                                        </div><div class="row">
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                        
+                        <div class="tab-pane slide" id="tab3">
+                            <div class="row">
+                                {% for fruct_juices in fruct_juices%}
+                                <div class="col-md-6 col-lg-4 col-xl-3 item">
+                                    <div class="product radius-md text-center p-30 mb-25">
+                                        <figure class="product-img mb-20 mx-auto">
+                                            <a href="shop-details.html" target="_self" title="Link" class="lazy-container ratio ratio-1-1 bg-none">
+                                                <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}" data-src="{{ fruct_juices.image.url }}" alt="Image">
+                                            </a>
+                                            <div class="hover-show">
+                                                <a href="cart.html" class="btn btn-md btn-primary" title="Add to Cart" target="_self">Дабавить корзину</a>
+                                            </div>
+                                        </figure>
+                                        <div class="product-details">
+                                            <h4 class="product-title lc-1 mb-10"><a href="shop-details.html" target="_self" title="{{fruct_juices.title}}">{{fruct_juices.title}}</a></h4>
+                                            <div class="product-price">
+                                                <span class="h6 font-lg new-price color-primary">${{fruct_juices.price}}</span>
+                                                {% comment %} <span class="prev-price font-sm">$8.00</span> {% endcomment %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% if forloop.counter|divisibleby:4 and not forloop.last %}
+                            </div><div class="row">
+                        {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="tab-pane slide" id="tab4">
+                            <div class="row">
+                                {%for ice_creams in ice_creams%}
+                                <div class="col-md-6 col-lg-4 col-xl-3 item">
+                                    <div class="product radius-md text-center p-30 mb-25">
+                                        <figure class="product-img mb-20 mx-auto">
+                                            <a href="shop-details.html" target="_self" title="Link" class="lazy-container ratio ratio-1-1 bg-none">
+                                                <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}" data-src="{{ice_creams.image.url}}" alt="Image">
+                                            </a>
+                                            <div class="hover-show">
+                                                <a href="cart.html" class="btn btn-md btn-primary" title="Add to Cart" target="_self">Дабавить корзину</a>
+                                            </div>
+                                        </figure>
+                                        <div class="product-details">
+                                            <h4 class="product-title lc-1 mb-10"><a href="shop-details.html" target="_self" title="Vanilla Cold Coffee">{{ice_creams.title}}</a></h4>
+                                            <div class="product-price">
+                                                <span class="h6 font-lg new-price color-primary">${{ice_creams.price}}</span>
+                                                {% comment %} <span class="prev-price font-sm">$6.00</span> {% endcomment %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% if forloop.counter|divisibleby:4 and not forloop.last %}
+                            </div><div class="row">
+                        {% endif %}
+                                {%endfor%}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cta-btn text-center mt-15 mb-25">
+                        <a href="shop.html" class="btn btn-lg btn-primary" title="Shop More" target="_self">Больше покупок
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Product-area end -->
+
+    <!-- Product-area start -->
+    <section class="product-area product-lg-5 pb-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title title-center mb-20" data-aos="fade-up">
+                        <h2 class="title">
+                            Мы предлагаем переменны цены на все товары                        </h2>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="row">
+                        {% for price_change in price_change %}
+                            <div class="col-md-6 col-lg-4">
+                                <div class="product text-center p-30 pb-70 radius-md mt-30 mb-30">
+                                    <div class="product-details">
+                                        <h3 class="product-title lc-1 mb-10">
+                                            <a href="shop-details.html" target="_self" title="{{price_change.title}}">{{price_change.title}}</a>
+                                        </h3>
+                                        <div class="product-price mb-15">
+                                            <span class="h4 new-price color-primary">${{price_change.new_price}}</span>
+                                            <span class="prev-price">${{price_change.old_price}}</span>
+                                        </div>
+                                        <p class="product-text lc-3">{{price_change.disc}}</p>
+                                    </div>
+                                    <figure class="product-img mt-25 mb-15 mx-auto">
+                                        <a href="shop-details.html" target="_self" title="Link" class="lazy-container ratio ratio-2-3 bg-none">
+                                            <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}" data-src="{{price_change.image.url}}" alt="Image">
+                                        </a>
+                                    </figure>
+                                    <a href="cart.html" class="btn btn-lg btn-primary" title="Add To Cart Now" target="_self">Добавить в корзину сейчас</a>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                
+    </section>
+    <!-- Product-area end -->
+
+    <!-- Testimonial-blog-area start -->
+    <div class="testimonial-blog-area bg-img" data-bg-image="{{settings.fons.url}}">
+        <!-- Testimonial-area start -->
+        <section class="testimonial-area testimonial-2 ptb-100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section-title title-center mb-50" data-aos="fade-up">
+                            <h2 class="title mt-0 color-white">Фантастические отзывы от наших счастливых клиентов
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="row justify-content-center" data-aos="fade-up">
+                            <div class="col-lg-6">
+                                <div class="swiper" id="testimonial-slider-3">
+                                    <div class="swiper-wrapper">                
+                                        {% for client in clients %}
+                                            <div class="swiper-slide pb-25">
+                                                <div class="slider-item text-center">
+                                                    <div class="quote">
+                                                        <p class="text font-lg mb-0 color-light">{{ client.disc }}</p>
+                                                    </div>
+                                                    <div class="client-info mt-20">
+                                                        <h6 class="name mb-1 color-white">{{ client.name }}</h6>
+                                                        <span class="designation font-sm color-light">{{ client.prof }}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    </div>
+                                </div>
+                                <div class="swiper testimonial-thumb mt-10">
+                                    <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <div class="slider-item text-center">
+                                                    <div class="client-img">
+                                                        <div class="lazy-container rounded-pill ratio ratio-1-1">
+                                                            <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}" data-src="{{ client.image.url }}" alt="Person Image">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                <div class="swiper-pagination position-static" id="testimonial-slider-3-pagination"></div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Testimonial-area end -->
+
+        <!-- Blog-area start -->
+        <section class="blog-area blog-3 pb-70">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="col-12">
+                            <div class="section-title title-inline mb-50" data-aos="fade-up">
+                                <div>
+                                    <h2 class="title color-white">Прочтите наш блог </h2>
+                                </div>
+                                <button class="btn btn-lg btn-primary" type="button" aria-label="Read Now">Читать далее
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="row">
+                            {% for blog in blog %}
+                                <div class="col-md-4" data-aos="fade-up">
+                                    <article class="card mb-30 radius-md p-20">
+                                        <div class="card-img">
+                                            <a href="{% url 'blog_detail' blog.id %}" target="_self" title="Link" class="lazy-container ratio ratio-5-3">
+                                                <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}" data-src="{{blog.image.url}}" alt="Blog Image">
+                                            </a>
+                                        </div>
+                                        <div class="card-content">
+                                            <h4 class="card-title lc-1 mb-15">
+                                                <a href="{% url 'blog_detail' blog.id %}" target="_self" title="Link">
+                                                    {{ blog.title }}
+                                                </a>
+                                            </h4>
+                                            <p class="card-text lc-3 mb-15">
+                                                {{ blog.disc|truncatewords:7 }}
+                                            </p>
+                                            <a href="{% url 'blog_detail' blog.id %}" class="btn-text color-primary font-lg" target="_self" title="Read More">Читать далее</a>
+                                        </div>
+                                    
+
+                                    </article>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Blog-area end -->
+    </div>
+    <!-- Testimonial-blog-area end -->
+
+    <!-- Gallery-area start -->
+    <div class="gallery-area" data-aos="fade-up">
+        <div class="container">
+            <div class="swiper gallery-slider">
+                <div class="swiper-wrapper">
+                    {% for gallery_item in gallery %}
+                    <div class="swiper-slide">
+                        <a href="{{ gallery_item.instagram }}" class="slider-item" title="Image" target="_blank">
+                            <div class="lazy-container ratio ratio-1-2">
+                                <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}" data-src="{{ gallery_item.image.url }}" alt="Image">
+                            </div>
+                            <div class="icon rounded-pill">
+                                <img class="lazyload blur-up" src="{% static 'assets/images/placeholder.png' %}" data-src="{% static 'assets/images/instagram.png' %}" alt="Image">
+                            </div>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <!-- Gallery-area end -->
+
+    <!-- Footer-area start -->
+    {% include "include/footer.html" %}
+    <!-- Footer-area end-->
+
+    <!-- Go to Top -->
+    <div class="go-top"><i class="fal fa-angle-up"></i></div>
+    <!-- Go to Top -->
+
+    <!-- Jquery JS -->
+    {%endblock%}
+
+</html>

@@ -1,0 +1,138 @@
+{% extends 'include/homepage.html'%}
+{% load static %}
+{% block content%}
+<body class="theme-color-1">
+    <!-- Preloader start -->
+    <div id="preLoader">
+        <div class="loader">
+            <img src="{% static 'assets/images/loader-5.gif' %}" alt="Preloader">
+        </div>
+    </div>
+    <!-- Preloader end -->
+
+    <!-- Header-area start -->
+    {% include 'include/header.html'%}
+    <!-- Header-area end -->
+
+    <!-- Breadcrumb start -->
+    <div class="breadcrumb-area bg-img bg-cover" data-bg-image="{% static 'assets/images/breadcrumb-bg.jpg' %}">
+        <div class="overlay 65"></div>
+        <div class="container">
+            <div class="content text-center">
+                <h2 class="color-white">Shop</h2>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{%url 'index'%}">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Shop</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb end -->
+
+    <!-- Shop-area start -->
+    <div class="shop-area pt-100 pb-75">
+        <div class="container">
+            <div class="product-sort-area pb-10" data-aos="fade-up">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <h4 class="mb-20">Показаны 1–12 из 16 результатов
+                        </h4>
+                    </div>
+                </div>
+            </div>
+            <!-- Products -->
+            <div class="row">
+                {% for all_product in all_product %}
+                <div class="col-sm-6 col-lg-4 col-xl-3 item">
+                    <div class="product radius-md text-center p-30 mb-25">
+                        <figure class="product-img mb-20 mx-auto">
+                            <a href="shop-details.html" target="_self" title="Link" class="lazy-container ratio ratio-1-1 bg-none">
+                                <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}" data-src="{{all_product.image.url}}" alt="Image">
+                            </a>
+                            <div class="hover-show">
+                                <div class="btn-groups">
+                                    <a href="shop-details.html" class="btn-icon rounded-circle" title="Quick View" target="_self">
+                                        <i class="fal fa-eye"></i>
+                                    </a>
+                                    <a href="{% url 'add_to_cart' all_product.product_type all_product.id %}" class="btn-icon rounded-circle" title="Add to Cart" target="_self">
+                                        <i class="fal fa-shopping-cart"></i>
+                                    </a>
+                                    
+                                    
+                                    
+                                    
+                                    <a href="wishlist.html" class="btn-icon rounded-circle" title="Add to Wishlist" target="_self">
+                                        <i class="fal fa-heart"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </figure>
+                        <div class="product-details">
+                            <h4 class="product-title lc-1 mb-10"><a href="shop-details.html" target="_self" title="Vanilla Cold Coffee">{{all_product.title}}</a></h4>
+                            <div class="product-price">
+                                <span class="h6 font-lg new-price color-primary">${{all_product.price}}</span>
+                                {% comment %} <span class="prev-price font-sm">$6.00</span> {% endcomment %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <nav class="pagination-nav mt-15 mb-25" data-aos="fade-up">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item">
+                        <a class="page-link" href="shop.html" aria-label="Previous">
+                            <i class="far fa-angle-left"></i>
+                        </a>
+                    </li>
+                    <li class="page-item active"><a class="page-link" href="shop.html">1</a></li>
+                    <li class="page-item"><a class="page-link" href="shop.html">2</a></li>
+                    <li class="page-item"><a class="page-link" href="shop.html">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="shop.html" aria-label="Next">
+                            <i class="far fa-angle-right"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <!-- Shop-area end -->
+
+    <!-- Gallery-area start -->
+    <div class="gallery-area" data-aos="fade-up">
+        <div class="container">
+            <div class="swiper gallery-slider">
+                <div class="swiper-wrapper">
+                    {% for gallery_item in gallery %}
+                    <div class="swiper-slide">
+                        <a href="{{ gallery_item.instagram }}" class="slider-item" title="Image" target="_blank">
+                            <div class="lazy-container ratio ratio-1-2">
+                                <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}" data-src="{{ gallery_item.image.url }}" alt="Image">
+                            </div>
+                            <div class="icon rounded-pill">
+                                <img class="lazyload blur-up" src="{% static 'assets/images/placeholder.png' %}" data-src="{% static 'assets/images/instagram.png' %}" alt="Image">
+                            </div>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Gallery-area end -->
+
+    <!-- Footer-area start -->
+    {%include 'include/footer.html'%}
+    <!-- Footer-area end-->
+
+    <!-- Go to Top -->
+    <div class="go-top"><i class="fal fa-angle-up"></i></div>
+    <!-- Go to Top -->
+
+    <!-- Jquery JS -->
+    {% endblock %}
+
+</html>

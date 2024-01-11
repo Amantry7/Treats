@@ -1,0 +1,171 @@
+{% extends 'include/homepage.html'%}
+{% load static%}
+{% block content%}
+<body class="theme-color-1">
+    <!-- Preloader start -->
+    <div id="preLoader">
+        <div class="loader">
+            <img src="{% static 'assets/images/loader-5.gif' %}" alt="Preloader">
+        </div>
+    </div>
+    <!-- Preloader end -->
+
+    <!-- Header-area start -->
+    {%include 'include/header.html'%}
+    <!-- Header-area end -->
+
+    <!-- Breadcrumb start -->
+    <div class="breadcrumb-area bg-img bg-cover" data-bg-image="{% static 'assets/images/breadcrumb-bg.jpg' %}">
+        <div class="overlay 65"></div>
+        <div class="container">
+            <div class="content text-center">
+                <h2 class="color-white">Cart</h2>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{%url 'index'%}">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Cart</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb end -->
+
+    <!-- Shopping-area Start -->
+    <div class="shopping-area cart ptb-100">
+        <div class="container">
+            <div class="row justify-content-center gx-xl-5">
+                <div class="col-lg-9">
+                    <form>
+                        <div class="item-list border radius-md table-responsive">
+                            <table class="shopping-table">
+                                <thead>
+                                    <tr class="table-heading">
+                                        <th scope="col" colspan="2" class="first">Product</th>
+                                        <th scope="col">Quantity</th>
+                                        <th scope="col">Stock</th>
+                                        <th scope="col">Total</th>
+                                        <th scope="col" class="last">Remove</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for cart_item in cart_items %}
+    <tr class="item">
+        <td class="product-img">
+            <div class="image">
+                <img class="lazyload" src="{% static 'images/placeholder.png' %}" data-src="{{ cart_item.get_product.image.url }}" alt="{{ cart_item.get_product.title }}">
+            </div>
+        </td>
+        <td class="product-desc">
+            <h6><a class="product-title mb-10" href="#">{{ cart_item.get_product.title }}</a></h6>
+            <div class="ratings">
+                <div class="rate">
+                    <div class="rating-icon"></div>
+                </div>
+                <span class="ratings-total">({{ cart_item.get_product.image.url }})</span>
+            </div>
+        </td>
+        <td class="qty">
+            <div class="quantity-input">
+                <div class="qty-btn quantity-down">
+                    <i class="fal fa-minus"></i>
+                </div>
+                <input type="text" value="{{ cart_item.quantity }}" name="quantity" spellcheck="false" data-ms-editor="true">
+                <div class="qty-btn quantity-up">
+                    <i class="fal fa-plus"></i>
+                </div>
+            </div>
+        </td>
+        <td class="product-availability">
+            <span class="badge {% if cart_item.get_product.in_stock %}bg-success{% else %}bg-warning{% endif %}">
+                {% if cart_item.get_product.in_stock %}In Stock{% else %}Out of Stock{% endif %}
+            </span>
+        </td>
+        <td>
+            <h6 class="mb-0">${{ cart_item.get_product.price }}</h6>
+        </td>
+        <td class="text-end">
+            <a href="{% url 'remove_from_cart' cart_item.id %}" class="btn btn-remove rounded-pill mx-auto">
+                <i class="fal fa-trash-alt"></i>
+            </a>
+        </td>
+    </tr>
+{% endfor %}
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="btn-groups mt-30">
+                            <a href="checkout.html" class="btn btn-md btn-primary" title="Checkout" target="_self">Checkout</a>
+                            <a href="cart.html" class="btn btn-md btn-primary" title="Update Cart" target="_self">Update Cart</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Shopping-area End -->
+
+    <!-- Gallery-area start -->
+    <div class="gallery-area" data-aos="fade-up">
+        <div class="container">
+            <div class="swiper gallery-slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="https://www.instagram.com/" class="slider-item" title="Image" target="_blank">
+                            <div class="lazy-container ratio ratio-2-3">
+                                <img class="lazyload" src="{% static 'assets/images/placeholder.png" data-src="{% static 'assets/images/gallery/gallery-1.png" alt="Image">
+                            </div>
+                            <div class="icon rounded-pill"><img class="lazyload blur-up" src="{% static 'assets/images/placeholder.png" data-src="{% static 'assets/images/instagram.png" alt="Image"></div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="https://www.instagram.com/" class="slider-item" title="Image" target="_blank">
+                            <div class="lazy-container ratio ratio-2-3">
+                                <img class="lazyload" src="{% static 'assets/images/placeholder.png" data-src="{% static 'assets/images/gallery/gallery-2.png" alt="Image">
+                            </div>
+                            <div class="icon rounded-pill"><img class="lazyload blur-up" src="{% static 'assets/images/placeholder.png" data-src="{% static 'assets/images/instagram.png" alt="Image"></div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="https://www.instagram.com/" class="slider-item" title="Image" target="_blank">
+                            <div class="lazy-container ratio ratio-2-3">
+                                <img class="lazyload" src="{% static 'assets/images/placeholder.png" data-src="{% static 'assets/images/gallery/gallery-3.png" alt="Image">
+                            </div>
+                            <div class="icon rounded-pill"><img class="lazyload blur-up" src="{% static 'assets/images/placeholder.png" data-src="{% static 'assets/images/instagram.png" alt="Image"></div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="https://www.instagram.com/" class="slider-item" title="Image" target="_blank">
+                            <div class="lazy-container ratio ratio-2-3">
+                                <img class="lazyload" src="{% static 'assets/images/placeholder.png" data-src="{% static 'assets/images/gallery/gallery-4.png" alt="Image">
+                            </div>
+                            <div class="icon rounded-pill"><img class="lazyload blur-up" src="{% static 'assets/images/placeholder.png" data-src="{% static 'assets/images/instagram.png" alt="Image"></div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="https://www.instagram.com/" class="slider-item" title="Image" target="_blank">
+                            <div class="lazy-container ratio ratio-2-3">
+                                <img class="lazyload" src="{% static 'assets/images/placeholder.png" data-src="{% static 'assets/images/gallery/gallery-5.png" alt="Image">
+                            </div>
+                            <div class="icon rounded-pill"><img class="lazyload blur-up" src="{% static 'assets/images/placeholder.png" data-src="{% static 'assets/images/instagram.png" alt="Image"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Gallery-area end -->
+
+    <!-- Footer-area start -->
+    {% include 'include/footer.html'%}
+    <!-- Footer-area end-->
+
+    <!-- Go to Top -->
+    <div class="go-top"><i class="fal fa-angle-up"></i></div>
+    <!-- Go to Top -->
+
+    <!-- Jquery JS -->
+   {% endblock %}
+
+</html>

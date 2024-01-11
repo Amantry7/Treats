@@ -1,0 +1,166 @@
+{% extends 'include/homepage.html'%}
+{% load static%}
+{%block content %}
+<body class="theme-color-1">
+    <!-- Preloader start -->
+    <div id="preLoader">
+        <div class="loader">
+            <img src="{% static 'assets/images/loader-5.gif' %}" alt="Preloader">
+        </div>
+    </div>
+    <!-- Preloader end -->
+
+    <!-- Header-area start -->
+    {% include 'include/header.html'%}
+    <!-- Header-area end -->
+
+    <!-- Breadcrumb start -->
+    <div class="breadcrumb-area bg-img bg-cover" data-bg-image="{% static 'assets/images/breadcrumb-bg.jpg' %}">
+        <div class="overlay 65"></div>
+        <div class="container">
+            <div class="content text-center">
+                <h2 class="color-white">Contact</h2>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Contact</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb end -->
+
+    <!-- Contact-area start -->
+    <div class="contact-area pt-100 pb-60">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card border radius-md mb-30" data-aos="fade-up">
+                        <div class="icon radius-sm bg-primary-light">
+                            <i class="fal fa-phone-plus"></i>
+                        </div>
+                        <div class="card-text">
+                            <p><a href="tel:{{settings.phone}}">{{settings.phone}}</a></p>
+                            {% comment %} <p><a href="tel:+990456123789">+990 456 123 789</a> {% endcomment %}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card border radius-md mb-30" data-aos="fade-up">
+                        <div class="icon radius-sm bg-primary-light">
+                            <i class="fal fa-envelope"></i>
+                        </div>
+                        <div class="card-text">
+                            <p><a href="mailTo:{{settings.gmail}}">{{settings.gmail}}</a></p>
+                            {% comment %} <p><a href="mailTo:info@example.com">info@example.com</a> {% endcomment %}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card border radius-md mb-30" data-aos="fade-up">
+                        <div class="icon radius-sm bg-primary-light">
+                            <i class="fal fa-map-marker-alt"></i>
+                        </div>
+                        <div class="card-text">
+                            <p>{{settings.addres}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Spacer -->
+            <div class="pb-70"></div>
+
+            <div class="row gx-xl-5">
+                <div class="section-title title-center mb-50">
+                    <h2 class="title mb-0" data-aos="fade-up">
+                            Связатся
+                    </h2>
+                </div>
+                <div class="col-lg-6 mb-40" data-aos="fade-up">
+                    <form id="contactForm" method='POST'>
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group mb-20">
+                                    <input type="text" name="name" class="form-control" id="name" required placeholder="Your name*">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group mb-20">
+                                    <input type="email" name="email" class="form-control" id="email" required placeholder="Your email*">
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="form-group mb-20">
+                                    <input type="text" name="subject" class="form-control" id="subject" required placeholder="Your subject">
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="form-group mb-20">
+                                    <textarea name="message" id="message" class="form-control" cols="30" rows="8" placeholder="Your Message..."></textarea>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12">
+                                <div class="custom-checkbox mb-20">
+                                    <input class="input-checkbox" type="checkbox" name="checkbox" id="checkbox1" value="">
+                                    <label class="form-check-label" for="checkbox1"><span> I agree with Treats's <a href="terms-conditions.html">Terms & Conditions</a> <span class="color-red">*</span> </span></label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 text-center">
+                                <button class="btn btn-lg btn-primary rounded-pill" type="submit" aria-label="Make a Reservation">Отпрваить</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>     
+                <div class="col-lg-6 mb-40" data-aos="fade-up">
+                    <div class="map h-100 overflow-hidden radius-md">
+                        <iframe class="lazyload h-100" id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-74.119763973046!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1659780709118!5m2!1sen!2sbd" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact-area end -->
+
+    <!-- Gallery-area start -->
+    <div class="gallery-area" data-aos="fade-up">
+        <div class="container">
+            <div class="swiper gallery-slider">
+                <div class="swiper-wrapper">
+                    {% for gallery_item in gallery %}
+                    <div class="swiper-slide">
+                        <a href="{{ gallery_item.instagram }}" class="slider-item" title="Image" target="_blank">
+                            <div class="lazy-container ratio ratio-1-2">
+                                <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}" data-src="{{ gallery_item.image.url }}" alt="Image">
+                            </div>
+                            <div class="icon rounded-pill">
+                                <img class="lazyload blur-up" src="{% static 'assets/images/placeholder.png' %}" data-src="{% static 'assets/images/instagram.png' %}" alt="Image">
+                            </div>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Gallery-area end -->
+
+    <!-- Footer-area start -->
+    {%include 'include/footer.html'%}
+    <!-- Footer-area end-->
+
+    <!-- Go to Top -->
+    <div class="go-top"><i class="fal fa-angle-up"></i></div>
+    <!-- Go to Top -->
+
+    <!-- Jquery JS -->
+{% endblock %}
+
+</html>

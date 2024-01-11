@@ -1,0 +1,400 @@
+{% extends 'include/homepage.html' %}
+{% load static %}
+
+{% block content %}
+    <!-- Preloader start -->
+    <div id="preLoader">
+        <div class="loader">
+            <img src="{% static 'assets/images/loader-5.gif' %}" alt="Preloader">
+        </div>
+    </div>
+    <!-- Preloader end -->
+
+    <!-- Header-area start -->
+    {% include "include/header.html" %}
+    <!-- Header-area end -->
+
+    <!-- Breadcrumb start -->
+    <div class="breadcrumb-area bg-img bg-cover" data-bg-image="{% static 'assets/images/breadcrumb-bg.jpg' %}">
+        <div class="overlay 65"></div>
+        <div class="container">
+            <div class="content text-center">
+                <h2 class="color-white">Блог</h2>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Blog Details</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb end -->
+
+    <!-- Blog-details-area start -->
+    <div class="blog-details-area pt-100 pb-40">
+        <div class="container">
+            <div class="row justify-content-center gx-xl-5">
+                <div class="col-lg-8">
+                    <article class="blog">
+                        <div class="blog-img mb-30">
+                            <div class="lazy-container ratio ratio-5-3 radius-md">
+                                <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}" data-src="{{ recent_blog.image.url }}" alt="Blog Image">
+                            </div>
+                        </div>
+                        <ul class="blog-list list-unstyled mb-1">
+                            <li class="icon-start">
+                                <i class="fal fa-user"></i>By Admin
+                            </li>
+                            <li class="icon-start">
+                                <i class="fal fa-calendar-check"></i>{{ recent_blog.create_at }}
+                            </li>
+                            <li class="icon-start">
+                                <i class="fal fa-tag"></i>{{ recent_blog.category }}
+                            </li>
+                        </ul>
+                        <h3 class="blog-title lc-2 mb-20">
+                            {{ recent_blog.title }}    
+                        </h3>
+                        <div class="blog-description">
+                            <p>
+                                {{ recent_blog.disc }}
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+                        
+
+                    <!-- Comments area -->
+                    <div class="comments">
+                        <h3 class="mb-20">Коментари</h3>
+                        <div class="comment-box mb-50 radius-md">
+                            <ol class="comment-list">
+                                {% for koment in clients %}
+                                <li class="comment">
+                                    <div class="comment-body">
+                                        <div class="comment-author">
+                                            <div class="lazy-container ratio ratio-1-1 rounded-circle">
+                                                <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}" data-src="{{koment.image.url}}" alt="image">
+                                            </div>
+                                        </div>
+                                        <div class="comment-content">
+                                            <h6 class="name">{{ koment.name }}</h6>
+                                            <p>
+                                                {{ koment.disc }}
+                                            </p>
+                                            <a href="blog-details.html" class="font-sm color-primary" target="_self" title="Reply">Reply</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                {% endfor %}
+                            </ol>
+                        </div>
+                        
+                        <div class="comment-reply mb-50">
+                            <h3 class="mb-10">Post Your Comment</h3>
+                            <p class="comment-notes">
+                                <span id="email-notes">Your email address will not be published.</span>
+                                Required fields are marked
+                                <span class="required text-danger">*</span>
+                            </p>
+                            <form id="commentForm" class="comment-form">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group mb-20">
+                                            <input type="text" class="form-control" name="name" placeholder="Name*" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group mb-20">
+                                            <input type="email" class="form-control" name="email" placeholder="Email*" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group mb-30">
+                                            <textarea name="message" class="form-control" placeholder="Comment" required rows="6"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn btn-lg btn-primary rounded-pill" type="button" aria-label="Post Comment">Post Comment</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <aside class="widget-area pb-10">
+                        <!-- Widget search -->
+                        <div class="widget widget-search mb-40">
+                            <div class="p-25 radius-md border">
+                                <h4 class="title mb-10">Search Posts</h4>
+                                <div class="search-form">
+                                    <form id="searchForm">
+                                        <div class="input-inline rounded-pill border">
+                                            <input class="form-control border-0 rounded-pill" placeholder="Search here..." type="text" name="SEARCH" required="">
+                                            <button class="btn-icon rounded-circle" type="submit" aria-label="Search button">
+                                                <i class="far fa-search"></i>
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Widget posts -->
+                        <div class="widget widget-posts mb-40">
+                            <div class="p-25 radius-md border">
+                                <h4 class="title">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#blogPost">
+                                        Top Latest Post
+                                    </button>
+                                </h4>
+                                <div id="blogPost" class="collapse show">
+                                    <div class="accordion-body mt-20 scroll-y">
+                                        <article class="blog blog-inline">
+                                            <div class="blog-img">
+                                                <a href="blog-details.html" target="_self" title="Link" class="lazy-container ratio ratio-1-1 radius-sm">
+                                                    <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}" data-src="{% static 'assets/images/blog/blog-17.jpg" alt="Blog Image">
+                                                </a>
+                                            </div>
+                                            <div class="blog-content">
+                                                <h6 class="blog-title lc-2 mb-10">
+                                                    <a href="blog-details.html" target="_self" title="Link">
+                                                        Healthy Habits to Adopt in Your Daily Routine For Healthy Life
+                                                    </a>
+                                                </h6>
+                                                <ul class="blog-list no-border list-unstyled">
+                                                    <li class="icon-start font-sm">
+                                                        <a href="blogs.html" target="_self" title="link">
+                                                            <i class="fal fa-user-circle"></i>By John
+                                                        </a>
+                                                    </li>
+                                                    <li class="icon-start font-sm">
+                                                        <a href="blogs.html" target="_self" title="link">
+                                                            <i class="fal fa-calendar-alt"></i>Jan 1, 2023
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </article>
+                                        <article class="blog blog-inline">
+                                            <div class="blog-img">
+                                                <a href="blog-details.html" target="_self" title="Link" class="lazy-container ratio ratio-1-1 radius-sm">
+                                                    <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}" data-src="{% static 'assets/images/blog/blog-18.jpg" alt="Blog Image">
+                                                </a>
+                                            </div>
+                                            <div class="blog-content">
+                                                <h6 class="blog-title lc-2 mb-10">
+                                                    <a href="blog-details.html" target="_self" title="Link">
+                                                        Living with Chronic: Strategies for Thriving Despite Health Challenges.
+                                                    </a>
+                                                </h6>
+                                                <ul class="blog-list no-border list-unstyled">
+                                                    <li class="icon-start font-sm">
+                                                        <a href="blogs.html" target="_self" title="link">
+                                                            <i class="fal fa-user-circle"></i>By Max
+                                                        </a>
+                                                    </li>
+                                                    <li class="icon-start font-sm">
+                                                        <a href="blogs.html" target="_self" title="link">
+                                                            <i class="fal fa-calendar-alt"></i>May 4, 2023
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </article>
+                                        <article class="blog blog-inline">
+                                            <div class="blog-img">
+                                                <a href="blog-details.html" target="_self" title="Link" class="lazy-container ratio ratio-1-1 radius-sm">
+                                                    <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}" data-src="{% static 'assets/images/blog/blog-19.jpg" alt="Blog Image">
+                                                </a>
+                                            </div>
+                                            <div class="blog-content">
+                                                <h6 class="blog-title lc-2 mb-10">
+                                                    <a href="blog-details.html" target="_self" title="Link">
+                                                        The Role of Exercise in Mental Health: Boosting Mood and Enhancing Overall Well-being.
+                                                    </a>
+                                                </h6>
+                                                <ul class="blog-list no-border list-unstyled">
+                                                    <li class="icon-start font-sm">
+                                                        <a href="blogs.html" target="_self" title="link">
+                                                            <i class="fal fa-user-circle"></i>By Admin
+                                                        </a>
+                                                    </li>
+                                                    <li class="icon-start font-sm">
+                                                        <a href="blogs.html" target="_self" title="link">
+                                                            <i class="fal fa-calendar-alt"></i>Jan 1, 2023
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Widget categories -->
+                        <div class="widget widget-categories mb-40">
+                            <div class="p-25 radius-md border">
+                                <h4 class="title">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#blogCategory">
+                                        Categories
+                                    </button>
+                                </h4>
+                                <div id="blogCategory" class="collapse show">
+                                    <div class="accordion-body mt-20 scroll-y">
+                                        <ul class="list-unstyled m-0">
+                                            <li>
+                                                <a href="blogs.html" target="_self" title="Blogs" class="border p-20 radius-sm">
+                                                    <span>Food</span>
+                                                    <span class="qty">258</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="blogs.html" target="_self" title="Blogs" class="border p-20 radius-sm">
+                                                    <span>Drinks</span>
+                                                    <span class="qty">562</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="blogs.html" target="_self" title="Blogs" class="border p-20 radius-sm">
+                                                    <span>Pizza</span>
+                                                    <span class="qty">125</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="blogs.html" target="_self" title="Blogs" class="border p-20 radius-sm">
+                                                    <span>Beverage</span>
+                                                    <span class="qty">68</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="blogs.html" target="_self" title="Blogs" class="border p-20 radius-sm">
+                                                    <span>Health</span>
+                                                    <span class="qty">322</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Widget newsletter -->
+                        <div class="widget widget-newsletter mb-40">
+                            <div class="p-25 radius-md border">
+                                <h4 class="title mb-10">
+                                    Subscribe Newsletter
+                                </h4>
+                                <p class="text">
+                                    Subscribe to our newsletter to get update and weakly discount from Treats.
+                                </p>
+                                <div class="newsletter-form mt-20 mb-1">
+                                    <form id="subscriptionForm">
+                                        <div class="input-inline rounded-pill border">
+                                            <input class="form-control border-0 rounded-pill" placeholder="Enter email..." type="text" name="SEARCH" required="">
+                                            <button class="btn-icon rounded-circle" type="submit" aria-label="Subscribe button">
+                                                <i class="fas fa-paper-plane"></i>
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Widget tags -->
+                        <div class="widget widget-tags mb-40">
+                            <div class="p-25 radius-md border">
+                                <h4 class="title">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#blogTags">
+                                        Relates Tags
+                                    </button>
+                                </h4>
+                                <div id="blogTags" class="collapse show">
+                                    <div class="accordion-body mt-20 scroll-y">
+                                        <div class="tags-group d-flex flex-wrap gap-2">
+                                            <a href="blogs.html" class="px-3 py-2 border radius-sm font-sm" title="Link" target="_self">Food</a>
+                                            <a href="blogs.html" class="px-3 py-2 border radius-sm font-sm" title="Link" target="_self">Health</a>
+                                            <a href="blogs.html" class="px-3 py-2 border radius-sm font-sm" title="Link" target="_self">Pizza</a>
+                                            <a href="blogs.html" class="px-3 py-2 border radius-sm font-sm" title="Link" target="_self">Drinks</a>
+                                            <a href="blogs.html" class="px-3 py-2 border radius-sm font-sm" title="Link" target="_self">Juice</a>
+                                            <a href="blogs.html" class="px-3 py-2 border radius-sm font-sm" title="Link" target="_self">Coffee</a>
+                                            <a href="blogs.html" class="px-3 py-2 border radius-sm font-sm" title="Link" target="_self">Milk</a>
+                                            <a href="blogs.html" class="px-3 py-2 border radius-sm font-sm" title="Link" target="_self">Chicken</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Blog-details-area end -->
+    
+    <!-- Gallery-area start -->
+    <div class="gallery-area" data-aos="fade-up">
+        <div class="container">
+            <div class="swiper gallery-slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="https://www.instagram.com/" class="slider-item" title="Image" target="_blank">
+                            <div class="lazy-container ratio ratio-2-3">
+                                <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}" data-src="{% static 'assets/images/gallery/gallery-1.png' %}" alt="Image">
+                            </div>
+                            <div class="icon rounded-pill"><img class="lazyload blur-up" src="{% static 'assets/images/placeholder.png' %}" data-src="{% static 'assets/images/instagram.png' %}" alt="Image"></div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="https://www.instagram.com/" class="slider-item" title="Image" target="_blank">
+                            <div class="lazy-container ratio ratio-2-3">
+                                <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}" data-src="{% static 'assets/images/gallery/gallery-2.png' %}" alt="Image">
+                            </div>
+                            <div class="icon rounded-pill"><img class="lazyload blur-up" src="{% static 'assets/images/placeholder.png' %}" data-src="{% static 'assets/images/instagram.png' %}" alt="Image"></div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="https://www.instagram.com/" class="slider-item" title="Image" target="_blank">
+                            <div class="lazy-container ratio ratio-2-3">
+                                <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}" data-src="{% static 'assets/images/gallery/gallery-3.png' %}" alt="Image">
+                            </div>
+                            <div class="icon rounded-pill"><img class="lazyload blur-up" src="{% static 'assets/images/placeholder.png' %}" data-src="{% static 'assets/images/instagram.png' %}" alt="Image"></div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="https://www.instagram.com/" class="slider-item" title="Image" target="_blank">
+                            <div class="lazy-container ratio ratio-2-3">
+                                <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}" data-src="{% static 'assets/images/gallery/gallery-4.png' %}" alt="Image">
+                            </div>
+                            <div class="icon rounded-pill"><img class="lazyload blur-up" src="{% static 'assets/images/placeholder.png' %}" data-src="{% static 'assets/images/instagram.png' %}" alt="Image"></div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="https://www.instagram.com/" class="slider-item" title="Image" target="_blank">
+                            <div class="lazy-container ratio ratio-2-3">
+                                <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}" data-src="{% static 'assets/images/gallery/gallery-5.png' %}" alt="Image">
+                            </div>
+                            <div class="icon rounded-pill"><img class="lazyload blur-up" src="{% static 'assets/images/placeholder.png' %}" data-src="{% static 'assets/images/instagram.png' %}" alt="Image"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Gallery-area end -->
+
+    <!-- Footer-area start -->
+    {% include "include/footer.html"%}
+    <!-- Footer-area end-->
+
+    <!-- Go to Top -->
+    <div class="go-top"><i class="fal fa-angle-up"></i></div>
+    <!-- Go to Top -->
+
+{%endblock%}
+
+</html>

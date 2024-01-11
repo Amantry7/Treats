@@ -1,0 +1,1841 @@
+{% extends 'include/homepage.html'%}
+{% load static %}
+{% block content%}
+<body class="theme-color-1">
+    <!-- Preloader start -->
+    <div id="preLoader">
+        <div class="loader">
+            <img src="{% static 'assets/images/loader-5.gif' %}" alt="Preloader">
+        </div>
+    </div>
+    <!-- Preloader end -->
+
+    <!-- Header-area start -->
+    {% include "include/header.html" %}
+    <!-- Header-area end -->
+
+    <!-- Breadcrumb start -->
+    <div class="breadcrumb-area bg-img bg-cover" data-bg-image="{% static 'assets/images/breadcrumb-bg.jpg' %}">
+        <div class="overlay 65"></div>
+        <div class="container">
+            <div class="content text-center">
+                <h2 class="color-white">Our Menu</h2>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{%url 'index'%}">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Menu</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb end -->
+
+    <!-- Menu-area start -->
+    <section class="menu-area pt-100 pb-75">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="tabs-navigation tabs-navigation-3 text-center mb-30">
+                        <ul class="nav nav-tabs flex-wrap">
+                            <li class="nav-item">
+                                <button class="nav-link active btn-lg" data-bs-toggle="tab" data-bs-target="#tab1" type="button">
+                                    <span class="menu-icon mb-15">
+                                        <i class="fal fa-utensils-alt"></i>
+                                    </span>
+                                    <span class="h5 mb-0 lh-1">Все наше меню(6)</span>
+                                </button>
+                            </li>
+
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link btn-lg" data-bs-toggle="tab" data-bs-target="#tab3" type="button">
+                                    <span class="menu-icon mb-15">
+                                        <i class="fal fa-ice-cream"></i>
+                                    </span>
+                                    <span class="h5 mb-0 lh-1">Дессерты(5)</span>
+                                </button>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link btn-lg" data-bs-toggle="tab" href="#tab4">
+                                    <span class="menu-icon mb-15">
+                                        <i class="fal fa-cocktail"></i>
+                                    </span>
+                                    <span class="h5 mb-0 lh-1">Соки</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="tab-content">
+                        <div class="tab-pane slide show active" id="tab1">
+                            <div class="tabs-navigation tabs-navigation-2 text-center mb-30">
+                                <ul class="nav nav-tabs border-bottom" data-hover="fancyHover">
+                                    <li class="nav-item active">
+                                        <button class="nav-link hover-effect active btn-lg" data-bs-toggle="tab" data-bs-target="#tab11" type="button">All</button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tab-content">
+                                <div class="tab-pane slide show active" id="tab11">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/product/menu/menu-1.png' %}'" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="cart.html" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            Set Menu-1
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">$9.00</span>
+                                                            <span class="prev-price">$10.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repudiandae dolore provident facere obcaecati quae?
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/product/menu/menu-2.png' %}'" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="cart.html" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            Set Menu-2
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">$11.00</span>
+                                                            <span class="prev-price">$12.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repudiandae dolore provident facere obcaecati quae?
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/product/menu/menu-3.png' %}'" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="cart.html" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            Set Menu-3
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">$8.00</span>
+                                                            <span class="prev-price">$9.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repudiandae dolore provident facere obcaecati quae?
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/product/menu/menu-4.png' %}'" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="cart.html" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            Set Menu-4
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">$7.00</span>
+                                                            <span class="prev-price">$9.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repudiandae dolore provident facere obcaecati quae?
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/product/menu/menu-5.png' %}'" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="cart.html" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            Set Menu-5
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">$12.00</span>
+                                                            <span class="prev-price">$13.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repudiandae dolore provident facere obcaecati quae?
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/product/menu/menu-6.png' %}'" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="cart.html" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            Set Menu-6
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">$11.00</span>
+                                                            <span class="prev-price">$12.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repudiandae dolore provident facere obcaecati quae?
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane slide" id="tab12">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/product/menu/menu-2.png' %}'" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="cart.html" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            Set Menu-2
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">$11.00</span>
+                                                            <span class="prev-price">$12.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repudiandae dolore provident facere obcaecati quae?
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/product/menu/menu-3.png' %}'" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="cart.html" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            Set Menu-3
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">$8.00</span>
+                                                            <span class="prev-price">$9.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repudiandae dolore provident facere obcaecati quae?
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/product/menu/menu-5.png' %}'" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="cart.html" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            Set Menu-5
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">$12.00</span>
+                                                            <span class="prev-price">$13.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repudiandae dolore provident facere obcaecati quae?
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/product/menu/menu-6.png' %}'" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="cart.html" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            Set Menu-6
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">$11.00</span>
+                                                            <span class="prev-price">$12.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repudiandae dolore provident facere obcaecati quae?
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane slide" id="tab13">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/product/menu/menu-3.png' %}'" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="cart.html" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            Set Menu-3
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">$8.00</span>
+                                                            <span class="prev-price">$9.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repudiandae dolore provident facere obcaecati quae?
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/product/menu/menu-4.png' %}'" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="cart.html" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            Set Menu-4
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">$7.00</span>
+                                                            <span class="prev-price">$9.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repudiandae dolore provident facere obcaecati quae?
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/product/menu/menu-5.png' %}'" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="cart.html" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            Set Menu-5
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">$12.00</span>
+                                                            <span class="prev-price">$13.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repudiandae dolore provident facere obcaecati quae?
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/product/menu/menu-6.png' %}'" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="cart.html" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            Set Menu-6
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">$11.00</span>
+                                                            <span class="prev-price">$12.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repudiandae dolore provident facere obcaecati quae?
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane slide" id="tab14">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/product/menu/menu-1.png' %}'" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="cart.html" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            Set Menu-1
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">$9.00</span>
+                                                            <span class="prev-price">$10.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repudiandae dolore provident facere obcaecati quae?
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/product/menu/menu-2.png' %}'" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="cart.html" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            Set Menu-2
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">$11.00</span>
+                                                            <span class="prev-price">$12.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repudiandae dolore provident facere obcaecati quae?
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/product/menu/menu-5.png' %}'" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="cart.html" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            Set Menu-5
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">$12.00</span>
+                                                            <span class="prev-price">$13.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repudiandae dolore provident facere obcaecati quae?
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/product/menu/menu-6.png' %}'" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="cart.html" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            Set Menu-6
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">$11.00</span>
+                                                            <span class="prev-price">$12.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repudiandae dolore provident facere obcaecati quae?
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane slide" id="tab2">
+                            <div class="tabs-navigation tabs-navigation-2 text-center mb-30">
+                                <ul class="nav nav-tabs border-bottom" data-hover="fancyHover">
+                                    <li class="nav-item active">
+                                        <button class="nav-link hover-effect active btn-lg" data-bs-toggle="tab" data-bs-target="#tab21" type="button">All</button>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button class="nav-link hover-effect btn-lg" data-bs-toggle="tab" data-bs-target="#tab22" type="button">Chocolot milkshake</button>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button class="nav-link hover-effect btn-lg" data-bs-toggle="tab" data-bs-target="#tab23" type="button">Fruits milkshake</button>
+                                    </li>
+                                    <li class="nav-item">
+                                        {% comment %} <button class="nav-link hover-effect btn-lg" data-bs-toggle="tab" data-bs-target="#tab24" type="button">Pizza</button> {% endcomment %}
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tab-content">
+                                <div class="tab-pane slide show active" id="tab21">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/product/menu/menu-1.png' %}'" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="cart.html" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            Big Burger
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">$9.00</span>
+                                                            <span class="prev-price">$10.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repudiandae dolore provident facere obcaecati quae?
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/product/menu/menu-2.png' %}'" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="cart.html" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            Hot Dog
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">$11.00</span>
+                                                            <span class="prev-price">$12.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repudiandae dolore provident facere obcaecati quae?
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/product/menu/menu-3.png' %}'" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="cart.html" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            Sandwich
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">$8.00</span>
+                                                            <span class="prev-price">$9.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repudiandae dolore provident facere obcaecati quae?
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/product/menu/menu-4.png' %}'" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="cart.html" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            Italian Pasta
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">$7.00</span>
+                                                            <span class="prev-price">$9.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repudiandae dolore provident facere obcaecati quae?
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/product/menu/menu-5.png' %}'" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="cart.html" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            Spaghetti
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">$12.00</span>
+                                                            <span class="prev-price">$13.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repudiandae dolore provident facere obcaecati quae?
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/product/menu/menu-6.png' %}'" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="cart.html" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            Large Pizza
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">$11.00</span>
+                                                            <span class="prev-price">$12.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repudiandae dolore provident facere obcaecati quae?
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane slide" id="tab22">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/product/menu/menu-2.png' %}'" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="cart.html" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            American Burger
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">$11.00</span>
+                                                            <span class="prev-price">$12.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repudiandae dolore provident facere obcaecati quae?
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/product/menu/menu-3.png' %}'" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="cart.html" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            Italian Burger
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">$8.00</span>
+                                                            <span class="prev-price">$9.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repudiandae dolore provident facere obcaecati quae?
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/product/menu/menu-5.png' %}'" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="cart.html" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            Combo Burger
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">$12.00</span>
+                                                            <span class="prev-price">$13.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repudiandae dolore provident facere obcaecati quae?
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/product/menu/menu-6.png' %}'" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="cart.html" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            Large Burger
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">$11.00</span>
+                                                            <span class="prev-price">$12.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repudiandae dolore provident facere obcaecati quae?
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane slide" id="tab23">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/product/menu/menu-3.png' %}'" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="cart.html" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            Chicken Pasta
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">$8.00</span>
+                                                            <span class="prev-price">$9.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repudiandae dolore provident facere obcaecati quae?
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/product/menu/menu-4.png' %}'" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="cart.html" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            Beef Pasta
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">$7.00</span>
+                                                            <span class="prev-price">$9.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repudiandae dolore provident facere obcaecati quae?
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/product/menu/menu-5.png' %}'" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="cart.html" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            Mutton Pasta
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">$12.00</span>
+                                                            <span class="prev-price">$13.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repudiandae dolore provident facere obcaecati quae?
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/product/menu/menu-6.png' %}'" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="cart.html" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            Prawn Pasta
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">$11.00</span>
+                                                            <span class="prev-price">$12.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repudiandae dolore provident facere obcaecati quae?
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane slide" id="tab24">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/product/menu/menu-1.png' %}'" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="cart.html" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            Italian Pizza
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">$9.00</span>
+                                                            <span class="prev-price">$10.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repudiandae dolore provident facere obcaecati quae?
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/product/menu/menu-2.png' %}'" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="cart.html" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            Italian Pizza
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">$11.00</span>
+                                                            <span class="prev-price">$12.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repudiandae dolore provident facere obcaecati quae?
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/product/menu/menu-5.png' %}'" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="cart.html" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            Chicken Pizza
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">$12.00</span>
+                                                            <span class="prev-price">$13.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repudiandae dolore provident facere obcaecati quae?
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/product/menu/menu-6.png' %}'" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="cart.html" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            Fish Pizza
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">$11.00</span>
+                                                            <span class="prev-price">$12.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repudiandae dolore provident facere obcaecati quae?
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane slide" id="tab3">
+                            <div class="tabs-navigation tabs-navigation-2 text-center mb-30">
+                                <ul class="nav nav-tabs border-bottom" data-hover="fancyHover">
+                                    <li class="nav-item active">
+                                        <button class="nav-link hover-effect active btn-lg" data-bs-toggle="tab" data-bs-target="#tab31" type="button">All</button>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button class="nav-link hover-effect btn-lg" data-bs-toggle="tab" data-bs-target="#tab32" type="button">Shake</button>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button class="nav-link hover-effect btn-lg" data-bs-toggle="tab" data-bs-target="#tab33" type="button">Ice Cream</button>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button class="nav-link hover-effect btn-lg" data-bs-toggle="tab" data-bs-target="#tab34" type="button">Cake</button>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tab-content">
+                                <!-- Вкладка для всех продуктов -->
+                                <div class="tab-pane slide show active" id="tab31">
+                                    <div class="row">
+                                        {% for product in all_products %}
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}" data-src="{{ product.image.url }}" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="cart.html" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            {{ product.title }}
+                                                        </h4>
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">${{ product.price }}</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        {{ product.disc }}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            
+                                <!-- Вкладка для молочных коктейлей (Shake) -->
+                                <div class="tab-pane slide" id="tab32">
+                                    <div class="row">
+                                        {% for milk_shake in milk_shakes %}
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}" data-src="{{ milk_shake.image.url }}" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="cart.html" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            {{ milk_shake.title }}
+                                                        </h4>
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">${{ milk_shake.price }}</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        {{ milk_shake.disc }}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            
+                                <!-- Вкладка для мороженого (Ice Cream) -->
+                                <div class="tab-pane slide" id="tab33">
+                                    <div class="row">
+                                        {% for ice_cream in ice_creams %}
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}" data-src="{{ ice_cream.image.url }}" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="cart.html" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            {{ ice_cream.title }}
+                                                        </h4>
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">${{ ice_cream.price }}</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        {{ ice_cream.disc }}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                
+                                <div class="tab-pane slide" id="tab34">
+                                    <div class="row">
+                                        {% for cake in cakes %}
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}" data-src="{{ cake.image.url }}" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="cart.html" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            {{ cake.title }}
+                                                        </h4>
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">${{ cake.price }}</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        {{ cake.disc }}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                
+                        <div class="tab-pane slide" id="tab4">
+                            <div class="tabs-navigation tabs-navigation-2 text-center mb-30">
+                                <ul class="nav nav-tabs border-bottom" data-hover="fancyHover">
+                                    <li class="nav-item active">
+                                        <button class="nav-link hover-effect active btn-lg" data-bs-toggle="tab" data-bs-target="#tab41" type="button">All</button>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button class="nav-link hover-effect btn-lg" data-bs-toggle="tab" data-bs-target="#tab42" type="button">Fruit Juice</button>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button class="nav-link hover-effect btn-lg" data-bs-toggle="tab" data-bs-target="#tab43" type="button">Coffee</button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tab-content">
+                                <div class="tab-pane slide show active" id="tab41">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/product/menu/menu-1.png' %}'" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="cart.html" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            Orange Juice
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">$9.00</span>
+                                                            <span class="prev-price">$10.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repudiandae dolore provident facere obcaecati quae?
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/product/menu/menu-2.png' %}'" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="cart.html" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            Chocolate Coffee
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">$11.00</span>
+                                                            <span class="prev-price">$12.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repudiandae dolore provident facere obcaecati quae?
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/product/menu/menu-3.png' %}'" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="cart.html" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            Strawberry Juice
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">$8.00</span>
+                                                            <span class="prev-price">$9.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repudiandae dolore provident facere obcaecati quae?
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/product/menu/menu-4.png' %}'" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="cart.html" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            Coconut Water
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">$7.00</span>
+                                                            <span class="prev-price">$9.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repudiandae dolore provident facere obcaecati quae?
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/product/menu/menu-5.png' %}'" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="cart.html" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            Hot Coffee
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">$12.00</span>
+                                                            <span class="prev-price">$13.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repudiandae dolore provident facere obcaecati quae?
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/product/menu/menu-6.png' %}'" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="cart.html" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            Mango Juice
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">$11.00</span>
+                                                            <span class="prev-price">$12.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repudiandae dolore provident facere obcaecati quae?
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane slide" id="tab42">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/product/menu/menu-2.png' %}'" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="cart.html" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            Orange Juice
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">$11.00</span>
+                                                            <span class="prev-price">$12.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repudiandae dolore provident facere obcaecati quae?
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/product/menu/menu-3.png' %}'" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="cart.html" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            Mango Juice
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">$8.00</span>
+                                                            <span class="prev-price">$9.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repudiandae dolore provident facere obcaecati quae?
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/product/menu/menu-5.png' %}'" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="cart.html" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            Coconut Water
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">$12.00</span>
+                                                            <span class="prev-price">$13.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repudiandae dolore provident facere obcaecati quae?
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/product/menu/menu-6.png' %}'" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="cart.html" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            Strawberry Juice
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">$11.00</span>
+                                                            <span class="prev-price">$12.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repudiandae dolore provident facere obcaecati quae?
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane slide" id="tab43">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/product/menu/menu-3.png' %}'" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="cart.html" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            Chocolate Coffee
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">$8.00</span>
+                                                            <span class="prev-price">$9.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repudiandae dolore provident facere obcaecati quae?
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/product/menu/menu-4.png' %}'" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="cart.html" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            Hot Coffee
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">$7.00</span>
+                                                            <span class="prev-price">$9.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repudiandae dolore provident facere obcaecati quae?
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/product/menu/menu-5.png' %}'" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="cart.html" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            Coffee Espresso
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">$12.00</span>
+                                                            <span class="prev-price">$13.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repudiandae dolore provident facere obcaecati quae?
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/product/menu/menu-6.png' %}'" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="cart.html" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            Coffee Latte
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">$11.00</span>
+                                                            <span class="prev-price">$12.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repudiandae dolore provident facere obcaecati quae?
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Menu-area end -->
+
+    <!-- Gallery-area start -->
+    <div class="gallery-area" data-aos="fade-up">
+        <div class="container">
+            <div class="swiper gallery-slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="https://www.instagram.com/" class="slider-item" title="Image" target="_blank">
+                            <div class="lazy-container ratio ratio-2-3">
+                                <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/gallery/gallery-1.png' %}'" alt="Image">
+                            </div>
+                            <div class="icon rounded-pill"><img class="lazyload blur-up" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/instagram.png' %}'" alt="Image"></div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="https://www.instagram.com/" class="slider-item" title="Image" target="_blank">
+                            <div class="lazy-container ratio ratio-2-3">
+                                <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/gallery/gallery-2.png' %}'" alt="Image">
+                            </div>
+                            <div class="icon rounded-pill"><img class="lazyload blur-up" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/instagram.png' %}'" alt="Image"></div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="https://www.instagram.com/" class="slider-item" title="Image" target="_blank">
+                            <div class="lazy-container ratio ratio-2-3">
+                                <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/gallery/gallery-3.png' %}'" alt="Image">
+                            </div>
+                            <div class="icon rounded-pill"><img class="lazyload blur-up" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/instagram.png' %}'" alt="Image"></div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="https://www.instagram.com/" class="slider-item" title="Image" target="_blank">
+                            <div class="lazy-container ratio ratio-2-3">
+                                <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/gallery/gallery-4.png' %}'" alt="Image">
+                            </div>
+                            <div class="icon rounded-pill"><img class="lazyload blur-up" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/instagram.png' %}'" alt="Image"></div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="https://www.instagram.com/" class="slider-item" title="Image" target="_blank">
+                            <div class="lazy-container ratio ratio-2-3">
+                                <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/gallery/gallery-5.png' %}'" alt="Image">
+                            </div>
+                            <div class="icon rounded-pill"><img class="lazyload blur-up" src="{% static 'assets/images/placeholder.png' %}'" data-src="{% static 'assets/images/instagram.png' %}'" alt="Image"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Gallery-area end -->
+
+    <!-- Footer-area start -->
+    {% include 'include/footer.html'%}
+    <!-- Footer-area end-->
+
+    <!-- Go to Top -->
+    <div class="go-top"><i class="fal fa-angle-up"></i></div>
+    <!-- Go to Top -->
+
+    <!-- Jquery JS -->
+    {%endblock%}
+
+</html>
